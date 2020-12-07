@@ -64,9 +64,7 @@ export default {
             this.codeloding = !this.codeloding
         },
         handleLogin(){
-            this.$router.push({
-                path:'/Layout'
-            })
+
         }
     }
 
@@ -117,10 +115,9 @@ $dark_gray:#889aa4;
         .form-buttom{
             width:50%;
             margin:30px auto;
-            border: unset;
-            background: linear-gradient(-45deg, #AE7DFD, #6673cc);          
+            background: linear-gradient(-45deg,#00CFFF,#FF34FA);          
             &:hover{
-                background: linear-gradient(45deg,#6673cc,#AE7DFD);
+                background: linear-gradient(45deg,#00CFFF,#FF34FA);
             }
         }            
             

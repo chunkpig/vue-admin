@@ -130,7 +130,7 @@ $cursor: #333;
         background: $bg;
         // background: url('../../assets/Login/login.png') no-repeat;
         // background-size: cover;
-        // opacity: 0.9;
+        opacity: 0.9;
         border-radius: 8px;
         z-index: 0;
         .container{

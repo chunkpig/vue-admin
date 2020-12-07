@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from '../views/Login/index.vue'
-import BasRoute from './modules/base'
 Vue.use(VueRouter);
 
 const routes = [
@@ -19,7 +18,6 @@ const routes = [
     name:'Layout',
     component:()=>import('@/Layout/index.vue'),
     redirect:'/Dashboard',
-    children:BasRoute
   }
 ];
 

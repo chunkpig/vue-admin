@@ -1,39 +1,39 @@
 <template>
-        <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-userphont" autocomplete="on" label-position="left">
+        <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-account" autocomplete="on" label-position="left">
             <div class="title-account">
-                <h3 class="title">USER PHONE</h3>
+                <h3 class="title">SIGN IN</h3>
             </div> 
             <el-form-item prop="username" class="form-elitem">
-                <span class="form-span">YOUR PHONE</span>
+                <span class="form-span">YOUR NAME</span>
                 <el-input
                     ref="username"
-                    v-model="loginForm.userphone"
-                    placeholder="UserPhone"
-                    name="phone"
+                    v-model="loginForm.username"
+                    placeholder="Username"
+                    name="username"
                     type="text"
                     tabindex="1"
                     size='mini'
                     autocomplete="on"
                 />
             </el-form-item> 
-            <el-form-item prop="password" class="form-elitem getcode">
-                 <span class="form-span">GET CODE</span>
-                 <el-input
-                    ref="username"
-                    v-model="loginForm.usercode"
-                    placeholder="usercode"
-                    name="phone"
-                    type="text"
-                    tabindex="1"
-                    size='mini'
-                    @change="infocode"
+            <el-form-item prop="password" class="form-elitem">
+                 <span class="form-span">YOUR PASSWORD</span>
+                <el-input
+                    :key="passwordType"
+                    ref="password"
+                    v-model="loginForm.password"
+                    :type="passwordType"
+                    placeholder="Password"
+                    name="password"
+                    tabindex="2"
                     autocomplete="on"
+                    @keyup.enter.native="handleLogin"
                 />
-                <span class="show-code" :style="codeloding?'background: #F4F9FF':''" @click="showPwd">
-                    获取验证码
+                <span class="show-pwd" @click="showPwd">
+                    <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
                 </span>
             </el-form-item>
-            <el-button :loading="loading" type="primary" class="form-buttom"   @click.native.prevent="handleLogin">LOG IN</el-button>
+            <el-button :loading="loading" type="primary" class="form-buttom"  @click.native.prevent="handleLogin">SIGN IN</el-button>
         </el-form>
 </template>
 <script>
@@ -41,8 +41,8 @@ export default {
     data(){
         return {
             loginForm:{
-                userphone: "",
-                usercode: ''
+                username: "admin",
+                password: '111111'
             },
             loginRules: {
                 // username: [ { required: true, trigger: 'blur', validator: validateUsername }],
@@ -50,23 +50,21 @@ export default {
             },
             passwordType: 'password',
             loading: false,
-            codeloding:false
         }
     },
     methods:{
         showPwd(){
-            // this.$nextTick(() => {
-                // console.log(this.codeloding)
-                // this.codeloding = !this.codeloding
-            // })
-        },
-        infocode(){
-            this.codeloding = !this.codeloding
+            if (this.passwordType === 'password') {
+                this.passwordType = ''
+            } else {
+                this.passwordType = 'password'
+            }
+            this.$nextTick(() => {
+                this.$refs.password.focus()
+            })
         },
         handleLogin(){
-            this.$router.push({
-                path:'/Layout'
-            })
+
         }
     }
 
@@ -75,7 +73,7 @@ export default {
 <style lang="scss" scoped>
 $light_gray:#333;
 $dark_gray:#889aa4;
-.login-userphont{
+.login-account{
         width: 80%;
         max-width: 100%;
         height: 80%;
@@ -94,19 +92,14 @@ $dark_gray:#889aa4;
                 font-weight: bold;
             }
         }
-        .show-code{
+        .show-pwd {
             position: absolute;
-            right: 0px;
-            top: 50px;
-            height: 27px;
+            right: 10px;
+            top: 55px;
             font-size: 16px;
             color: $dark_gray;
             cursor: pointer;
             user-select: none;
-            background: #fff;
-            box-shadow: 0 0 4px #345;
-            line-height: 27px;
-            padding: 10px;
         }
         .form-span{ 
             display: inherit;
@@ -120,14 +113,14 @@ $dark_gray:#889aa4;
             border: unset;
             background: linear-gradient(-45deg, #AE7DFD, #6673cc);          
             &:hover{
-                background: linear-gradient(45deg,#6673cc,#AE7DFD);
+                background: linear-gradient(45deg,#00CFFF,#FF34FA);
             }
         }            
             
 }
 </style>
 <style lang="scss">
-.login-userphont{
+.login-account{
     .form-elitem{
         width: 85%;
         .el-input__inner{
@@ -135,7 +128,7 @@ $dark_gray:#889aa4;
             width: 100%;
             height: 47px;
             font-size: 18px;
-            // border-radius: 30px;
+            border-radius: 30px;
             padding: 12px 0px;
             text-align: center;
                 // background: transparent;
@@ -147,11 +140,5 @@ $dark_gray:#889aa4;
         }
         
     }
-    .getcode{
-        .el-input__inner{
-            padding-right: 37% !important;
-        }
-    }
 }
-
 </style>

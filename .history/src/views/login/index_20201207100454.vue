@@ -85,7 +85,7 @@ $cursor: #333;
     .login-bg{
         width: 100%;
         height: 100%;
-        background: linear-gradient(125deg, #AE7DFD, #6673cc);
+        background: linear-gradient(80deg,#00CFFF,#5828FA,#FF34FA);
         filter: blur(10px);
         z-index: -1; 
     }
@@ -128,9 +128,6 @@ $cursor: #333;
         justify-content: space-around;
         // align-items: center;
         background: $bg;
-        // background: url('../../assets/Login/login.png') no-repeat;
-        // background-size: cover;
-        // opacity: 0.9;
         border-radius: 8px;
         z-index: 0;
         .container{

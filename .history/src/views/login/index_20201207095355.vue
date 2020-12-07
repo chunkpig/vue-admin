@@ -85,7 +85,7 @@ $cursor: #333;
     .login-bg{
         width: 100%;
         height: 100%;
-        background: linear-gradient(125deg, #AE7DFD, #6673cc);
+        background: linear-gradient(80deg,#00CFFF,#5828FA,#FF34FA);
         filter: blur(10px);
         z-index: -1; 
     }
@@ -95,8 +95,8 @@ $cursor: #333;
         left: 37%;
         width: 400px;
         height: 550px;
-        // max-width: 25%;
-        // max-height: 70%;
+        max-width: 25%;
+        max-height: 70%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -122,15 +122,12 @@ $cursor: #333;
         transform: translate(-50%,-50%);
         width: 1000px;
         height: 500px;
-        // max-width: 55%;
-        // max-height: 55%;
+        max-width: 55%;
+        max-height: 55%;
         display: flex;
         justify-content: space-around;
         // align-items: center;
         background: $bg;
-        // background: url('../../assets/Login/login.png') no-repeat;
-        // background-size: cover;
-        // opacity: 0.9;
         border-radius: 8px;
         z-index: 0;
         .container{

@@ -64,9 +64,7 @@ export default {
             this.codeloding = !this.codeloding
         },
         handleLogin(){
-            this.$router.push({
-                path:'/Layout'
-            })
+
         }
     }
 

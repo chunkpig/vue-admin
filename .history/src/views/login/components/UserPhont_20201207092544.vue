@@ -29,8 +29,8 @@
                     @change="infocode"
                     autocomplete="on"
                 />
-                <span class="show-code" :style="codeloding?'background: #F4F9FF':''" @click="showPwd">
-                    获取验证码
+                <span class="show-code" :style="codeloding?'background: #Fff':''" @click="showPwd">
+                   获取验证码
                 </span>
             </el-form-item>
             <el-button :loading="loading" type="primary" class="form-buttom"   @click.native.prevent="handleLogin">LOG IN</el-button>
@@ -64,9 +64,7 @@ export default {
             this.codeloding = !this.codeloding
         },
         handleLogin(){
-            this.$router.push({
-                path:'/Layout'
-            })
+
         }
     }
 
@@ -103,7 +101,7 @@ $dark_gray:#889aa4;
             color: $dark_gray;
             cursor: pointer;
             user-select: none;
-            background: #fff;
+            background: #F4F9FF;
             box-shadow: 0 0 4px #345;
             line-height: 27px;
             padding: 10px;
@@ -117,10 +115,9 @@ $dark_gray:#889aa4;
         .form-buttom{
             width:50%;
             margin:30px auto;
-            border: unset;
-            background: linear-gradient(-45deg, #AE7DFD, #6673cc);          
+            background: linear-gradient(-45deg,#00CFFF,#FF34FA);          
             &:hover{
-                background: linear-gradient(45deg,#6673cc,#AE7DFD);
+                background: linear-gradient(45deg,#00CFFF,#FF34FA);
             }
         }            
             
