@@ -8,7 +8,7 @@
     </div>
     <div class="login-container">
         <!-- <transition name="animcontainer"> -->
-        <div class="container" :class="animconbgShow?'':'animcontainer'">
+        <div class="container" :class=" animconbgShow ? ' ' : ' animcontainer ' ">
                 <p class="p-container">Log in with your account password</p>
                 <div class="button-container" @click="animconbgShow =!animconbgShow">
                     SIGN IN
@@ -17,7 +17,7 @@
         </div>
          <!-- </transition> -->
          <!-- <transition name="animcontainer"> -->
-        <div class="container" :class="animconbgShow?'animcontainer':''" >
+        <div class="container" :class=" animconbgShow ? ' animcontainer ' : ' ' " >
                 <p class="p-container">Start logging in with your cell phone number</p>
                 <div class="button-container" @click="animconbgShow =!animconbgShow">
                     USER PHONE
@@ -95,8 +95,8 @@ $cursor: #333;
         left: 37%;
         width: 400px;
         height: 550px;
-        // max-width: 25%;
-        // max-height: 70%;
+        max-width: 25%;
+        max-height: 70%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -122,8 +122,8 @@ $cursor: #333;
         transform: translate(-50%,-50%);
         width: 1000px;
         height: 500px;
-        // max-width: 55%;
-        // max-height: 55%;
+        max-width: 55%;
+        max-height: 55%;
         display: flex;
         justify-content: space-around;
         // align-items: center;
@@ -164,10 +164,10 @@ $cursor: #333;
         }
     }
     .leftanimconbg{
-         transform: translate(250px,-50%);
+         transform: translate(52%,-50%);
     }
     .rightanimconbg{
-         transform: translate(-290px,-50%);
+         transform: translate(-50%,-50%);
     }
    .animcontainer-enter-active, .animcontainer-leave-active {
         // opacity: 1;
@@ -178,6 +178,11 @@ $cursor: #333;
        
         // transition: all 1s;
          opacity: 0;
+    }
+    @media screen and (min-width: 1367px) {
+        .leftanimconbg{
+            transform: translate(80%,-50%);
+        }
     }
 }
 </style>

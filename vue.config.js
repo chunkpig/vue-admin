@@ -4,9 +4,14 @@ function resolve(dir) {
     return path.join(__dirname, dir);
 }
 module.exports={
+    /**
+     *查看配置 https://cli.vuejs.org/config/#publicpath
+     */
     publicPath: '/', //根路径 cli3.0以上使用publicPath
     //打包后输出路径
     outputDir: 'dist',
+    assetsDir: 'static',
+    lintOnSave: process.env.NODE_ENV === 'development',
     devServer:{
         port: port,
         open: true,
@@ -14,6 +19,7 @@ module.exports={
             warnings: false,
             errors: true
         },
+        before: require('./mock/mock-server.js')
     },
      // configureWebpack 值为对象，会通过 webpack-merge 合并到最终的配置
     configureWebpack:{

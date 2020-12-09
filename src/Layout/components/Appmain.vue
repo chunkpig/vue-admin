@@ -1,21 +1,19 @@
 <!--  -->
 <template>
-<div class="app-wrapper">
-    <div class="app-bg">
-        
-    </div>
+<div id='appmain'>
+    
 </div>
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-// import {NavTab} from './components'
+
 export default {
 //name放入模板名,方便在其他地方引用
 name: '',
 //import引入的组件需要注入到对象中才能使用
-// components: { NavTab },
+components: {},
 data() {
 //这里存放数据
 return {
@@ -49,17 +47,6 @@ activated() {
 }
 </script>
 <style lang='scss' scoped>
-.app-wrapper{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: url('../assets/Layout/bg.png') no-repeat;
-    background-size: 100% 100%;
-    .app-bg{
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.6);
-    }
-}
+/* @import url(); 引入公共css类 */
 
 </style>
