@@ -1,12 +1,28 @@
 <!--  -->
 <template>
-<div id=''></div>
+<div>
+    <el-scrollbar wrap-class="scrollbar-wrapper">
+      <el-menu
+        :default-active="activeMenu"
+        :collapse="isCollapse"
+        :background-color="variables.menuBg"
+        :text-color="variables.menuText"
+        :unique-opened="false"
+        :active-text-color="variables.menuActiveText"
+        :collapse-transition="false"
+        mode="vertical"
+      >
+        <sidebar-item v-for="route in permission_routes" :key="route.path" :itemRoute='router' :item="route" :base-path="route.path" />
+      </el-menu>
+    </el-scrollbar>
+</div>
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-
+import variables from '@/styles/variables'
+import permission_routes from '@/router/modules/base'
 export default {
 //name放入模板名,方便在其他地方引用
 name: '',

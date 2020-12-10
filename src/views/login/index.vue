@@ -64,7 +64,7 @@ methods: {
 },
 //监控data中的数据变化
 watch: {
-
+    
 },
 //如果页面有keep-alive缓存功能，这个函数会触发
 activated() {

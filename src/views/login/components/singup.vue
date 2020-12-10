@@ -50,9 +50,12 @@
                 })
             },
             handleLogin() {
-                this.$router.push({
-                    path: '/Layout'
+                this.$store.dispatch('user/login', this.loginForm).then(res=>{
+                    console.log(res)
                 })
+                // this.$router.push({
+                //     path: '/Layout'
+                // })
             }
         }
 

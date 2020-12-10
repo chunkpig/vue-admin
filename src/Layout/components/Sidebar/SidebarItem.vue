@@ -1,19 +1,31 @@
 <!--  -->
 <template>
-<div id=''>
+<div class="sidebarItem">
+    <template v-if="!itemRoute.children">
+        <el-menu-item :index="itemRoute.path">
+            <item :icon="itemRoute.meta.icon" :title="itemRoute.meta.title" />
+        </el-menu-item>
+    </template>
 
+    <el-submenu v-else ref="subMenu" :index="itemRoute.path" popper-append-to-body>
+        <template slot="title">
+            <item :icon="itemRoute.meta.icon" :title="itemRoute.meta.title" />
+        </template>
+        <sidebar-item v-for="item in itemRoute.children" :key="item.path" :itemRoute="item" />
+    </el-submenu>
 </div>
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-
+import item from './item'
 export default {
 //name放入模板名,方便在其他地方引用
 name: '',
+props:['itemRoute'],
 //import引入的组件需要注入到对象中才能使用
-components: {},
+components: {item},
 data() {
 //这里存放数据
 return {
