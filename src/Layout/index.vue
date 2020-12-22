@@ -33,7 +33,9 @@ return {
 },
 //监听属性 类似于data概念
 computed: {
-
+    ...mapGetters([
+        
+    ])
 },
 //生命周期 - 创建完成（可以访问当前this实例）
 created() {
