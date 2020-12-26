@@ -17,7 +17,7 @@ const routes = [
   {
     path:"/Layout",
     name:'Layout',
-    component:()=>import('@/Layout/index.vue'),
+    component:()=>import('@/Layout'),
     redirect:'/Dashboard',
     children:BasRoute
   }

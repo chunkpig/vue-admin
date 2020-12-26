@@ -1,0 +1,51 @@
+#app {
+    .main-container {
+        min-height: 100%;
+        transition: margin-left .28s;
+        margin-left: $sideBarWidth;
+        position: relative;
+    }
+
+    .sidebar-container {
+        position: fixed;
+        height: 100%;
+        width: $sideBarWidth !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        background: $menuBg;
+        transition: all .28s;
+
+        .scrollbar-wrapper {
+            overflow-x: hidden !important;
+        }
+
+        .el-scrollbar {
+            height: 100%;
+        }
+
+        .svg-icon {
+            margin-right: 16px;
+        }
+    }
+
+    .hidcontainer {
+        .sidebar-container {
+            width: 54px !important;
+            transition: all .28s;
+        }
+
+        .main-container {
+            margin-left: 54px;
+        }
+
+        .svg-icon {
+            margin-right: 20px;
+        }
+    }
+
+
+
+}

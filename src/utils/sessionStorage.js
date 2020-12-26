@@ -11,7 +11,7 @@ export function getStorage(key) {
    * @param key string,token
    */
   export function setStorage(key, token) {
-    return window.sessionStorage.setItem(key, token)
+    return window.sessionStorage.setItem(key, JSON.stringify(token))
   }
   
   /**
